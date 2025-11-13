@@ -1,0 +1,769 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net" modified="" agent="Prometheus Detailed Generator" version="20.8.3" editor="">
+  <diagram name="Purpose">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Project Prometheus – Purpose" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="Goal: Achieve true cost transparency across AWS &amp; EKS by connecting infrastructure spend to applications, services, and business outcomes." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="1800" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Why This Matters" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="260" width="560" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="• Identify which products/services drive cloud cost
+• Link architecture choices to margin impact
+• Replace manual estimates with shared, trusted data" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="310" width="520" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Vision" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="740" y="260" width="560" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="A unified, living Unit Economics model from container to business unit enabling smarter architectural, product, and financial decisions." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="310" width="520" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="What Exists Today (Malleable Prototype)" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="260" width="560" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Prototype proves feasibility connecting AWS/EKS costs to service mappings.
+Everything (schema, metrics, UX, allocation logic) is adaptable." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="310" width="520" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="The Opportunity" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="500" width="900" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="• Single source of truth for infra→app→product costs
+• Consistent, extensible attribution model
+• Shared understanding across Engineering, Finance, Product" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="550" width="860" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="What’s Needed Now" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="980" y="500" width="880" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="• Engagement from FinOps, Engineering, and stakeholders
+• Align on core questions (e.g., cost/txn, per service, per product)
+• Agree cost transparency becomes part of our operating model" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="550" width="840" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Summary: Prometheus is a proven concept ready for collective evolution — a living model of cost &amp; value." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="740" width="1800" height="120" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Architecture">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="200" value="Project Prometheus – Functional Architecture" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="201" value="1. Data Ingestion" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="120" y="140" width="1680" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="202" value="AWS CUR (hourly, resource IDs)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="180" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="203" value="EKS Split Cost Allocation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="180" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="204" value="Traces (X-Ray / OTel)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="180" width="320" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="205" value="ALB/NAT/S3/ECR metrics" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="180" width="280" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="206" value="Tags &amp; Metadata (AWS/EKS/Git)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1540" y="180" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="207" value="2. Normalisation &amp; Enrichment" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="120" y="320" width="1680" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="208" value="Identity Resolution" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="350" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="209" value="Tag Normalisation &amp; Validation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="350" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="210" value="Context Enrichment (env/team/product)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="350" width="800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="211" value="3. Service &amp; Application Mapping" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="120" y="470" width="1680" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="212" value="Rules Engine (resource→service→app→product)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="500" width="520" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="213" value="Versioned Mapping (Git/DB)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="500" width="380" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="214" value="Manual Overrides / Exceptions" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="500" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="215" value="Shared Pools (for allocation)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="500" width="320" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="216" value="4. Cost Attribution &amp; Graph" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="120" y="620" width="1680" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="217" value="Direct Attribution" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="660" width="320" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="218" value="Shared Resource Allocation (requests/bytes/CPU-sec)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="660" width="540" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="219" value="Unallocated Pool + Reconciliation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="660" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="220" value="Graph Builder (nodes/edges + weights)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="660" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="221" value="Temporal Snapshots &amp; Impact Propagation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="730" width="760" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="222" value="5. Insights &amp; Access" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="120" y="820" width="1680" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="223" value="Multi-Layer Views (infra/app/product/business)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="860" width="520" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="224" value="Dashboards &amp; Reports" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="860" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="225" value="Anomaly Detection" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="860" width="360" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="226" value="What-If &amp; Forecasts" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="860" width="320" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="227" value="APIs &amp; Export Connectors" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="930" width="520" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Ingestion – Detailed">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="400" value="Data Ingestion – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="401" value="Sources" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="880" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="402" value="AWS CUR
+• Hourly granularity
+• Resource IDs, tags
+• Pricing &amp; amortization
+• Delivered to S3" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="403" value="EKS Split Cost Allocation
+• Pod/namespace/cluster
+• Node→pod splits
+• EC2/Fargate" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="404" value="Traces (X-Ray/OTel)
+• Service edges
+• Request counts/latency
+• Error rates" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="405" value="ALB/NAT/S3/ECR
+• Requests/bytes
+• Storage/PUT/GET
+• Egress" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="330" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="406" value="Tags &amp; Metadata
+• AWS Tags, K8s labels
+• IaC manifests
+• CMDB/service registry" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="470" width="840" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="407" value="Pipelines" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="880" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="408" value="Batch Ingest (S3→Glue/Athena)
+• CUR crawler &amp; partitions
+• Schema versioning
+• Restatement handling" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="409" value="Stream/Periodic Ingest
+• Traces/logs via Firehose
+• Metrics via exporters
+• Hourly bucketing" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="410" value="Key Considerations:
+• UTC alignment across sources
+• Idempotent loads
+• Late-arriving data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="710" width="840" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="411" value="Dependencies / Inputs
+
+• Ownership
+• Access/Permissions
+• Upstream Data
+• Process Dependencies
+• Cross-Team Touchpoints" style="swimlane;whiteSpace=wrap;html=1;fontSize=14;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="140" width="400" height="840" as="geometry"/>
+        </mxCell>
+        <mxCell id="412" value="Ownership: FinOps Data Eng
+Access: Billing (CUR S3), CloudWatch/X-Ray, EKS
+Upstream: Platform Eng for exporters
+Cross-Team: SRE for logging/storage" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="190" width="360" height="240" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Normalisation – Detailed">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="600" value="Normalisation &amp; Enrichment – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="601" value="Core Functions" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="880" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="602" value="Identity Resolution
+• Map ARNs/resource IDs→services
+• Temporal joins for ephemeral pods
+• Node→pod lineage" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="603" value="Tag Normalisation
+• Mandatory keys
+• Case/format rules
+• Auto-fix &amp; exceptions" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="604" value="Context Enrichment
+• env/team/product/app/service
+• Data class/tier
+• Cost categories" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="605" value="Quality Gates
+• Completeness checks
+• Drift alerts
+• Quarantine bad records" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="330" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="606" value="Outputs" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="880" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="607" value="Fact: cost_hourly_resource
+Fact: usage_hourly_resource
+Dim: service/app/product/env/team
+Audit: data_quality_events" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="608" value="Reprocess Capability
+• Versioned transforms
+• Backfills
+• Change logs" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="609" value="Consider:
+• Schema evolution strategy
+• Immutable raw + curated layers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="710" width="840" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="610" value="Dependencies / Inputs
+
+• Ownership
+• Access/Permissions
+• Upstream Data
+• Process Dependencies
+• Cross-Team Touchpoints" style="swimlane;whiteSpace=wrap;html=1;fontSize=14;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="140" width="400" height="840" as="geometry"/>
+        </mxCell>
+        <mxCell id="611" value="Ownership: FinOps Data Eng
+Inputs: Ingestion outputs, Tag policies
+Cross-Team: Platform Eng (tagging), App Teams (labels)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="190" width="360" height="240" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Mapping – Detailed">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="800" value="Service &amp; Application Mapping – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="801" value="Mapping Engine" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="880" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="802" value="Rules DSL
+• Tag-based + pattern-based
+• Precedence &amp; fallbacks
+• Testable rules" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="803" value="Hierarchy Builder
+• resource→service→app→product
+• Business unit partitions
+• Multi-tenant awareness" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="804" value="Manual Overrides
+• Shared resources pools
+• Exception journal
+• SLA for resolution" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="805" value="Versioning &amp; Audit
+• Git-backed configs
+• Effective-dated rules
+• Recompute history" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="330" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="806" value="Outputs" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="880" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="807" value="Dim tables: service/app/product
+Lineage: resource→service map
+Health: unmapped resources list" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="808" value="KPIs
+• % mapped cost
+• Time-to-map exceptions
+• Tag compliance by team" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="809" value="Consider governance gates to block prod deploys lacking mandatory tags for new services." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="710" width="840" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="810" value="Dependencies / Inputs
+
+• Ownership
+• Access/Permissions
+• Upstream Data
+• Process Dependencies
+• Cross-Team Touchpoints" style="swimlane;whiteSpace=wrap;html=1;fontSize=14;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="140" width="400" height="840" as="geometry"/>
+        </mxCell>
+        <mxCell id="811" value="Ownership: FinOps + Platform Eng
+Inputs: Tags/labels, org taxonomy
+Cross-Team: App Teams (own mappings)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="190" width="360" height="240" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Attribution – Detailed">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="1000" value="Cost Attribution &amp; Allocation – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="1001" value="Attribution Types" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="880" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="1002" value="Direct Attribution
+• Tagged, dedicated resources
+• Pod/namespace compute splits
+• Service-owned storage" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1003" value="Shared Allocation
+• ELB by requests
+• NAT by bytes
+• S3 by object tags or access logs" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1004" value="Advanced Allocators
+• CPU-sec/GB-sec
+• P95 traffic weights
+• Hybrid cost models" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1005" value="Reconciliation &amp; Audit
+• Σ allocated + unallocated = CUR
+• Backdated reallocation
+• What-if scenarios" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="330" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1006" value="Outputs" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="880" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="1007" value="fact_cost_hourly_service
+fact_cost_hourly_app
+fact_cost_hourly_product
+unallocated_costs" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1008" value="Policies
+• Allocation playbook per cost family
+• Versioned changes
+• Approval workflow" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1009" value="Tip: Keep unallocated visible to drive tagging and mapping improvements, not to hide variance." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="710" width="840" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="1010" value="Dependencies / Inputs
+
+• Ownership
+• Access/Permissions
+• Upstream Data
+• Process Dependencies
+• Cross-Team Touchpoints" style="swimlane;whiteSpace=wrap;html=1;fontSize=14;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="140" width="400" height="840" as="geometry"/>
+        </mxCell>
+        <mxCell id="1011" value="Ownership: FinOps (policy) + Data Eng (engine)
+Inputs: Mapping outputs, traffic metrics
+Cross-Team: SRE (ELB/NAT logs), App Teams (object tags)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="190" width="360" height="240" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Graph – Detailed">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="1200" value="Graph Model &amp; Impact – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="1201" value="Graph Construction" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="880" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="1202" value="Nodes
+• Services, DBs, caches, gateways
+• Infra nodes for shared components" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1203" value="Edges
+• From traces/mesh/logs
+• Metrics: req, bytes, latency, errors" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1204" value="Weights &amp; Costs
+• Attach direct &amp; allocated costs
+• Time-sliced (hour/day)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1205" value="Temporal Snapshots
+• Versioned DAG states
+• Change detection" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="330" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1206" value="Impact &amp; Analysis" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="880" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="1207" value="Upstream/Downstream Cost Impact
+• Attribute transitive costs
+• Identify expensive dependencies" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1208" value="Hot Paths &amp; Bottlenecks
+• Cost vs latency overlays
+• Optimisation targets" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1209" value="Caution: Avoid double-counting when propagating costs; maintain both direct and absorbed views." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="710" width="840" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="1210" value="Dependencies / Inputs
+
+• Ownership
+• Access/Permissions
+• Upstream Data
+• Process Dependencies
+• Cross-Team Touchpoints" style="swimlane;whiteSpace=wrap;html=1;fontSize=14;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="140" width="400" height="840" as="geometry"/>
+        </mxCell>
+        <mxCell id="1211" value="Ownership: FinOps Analytics
+Inputs: Traces/mesh/logs, Attribution outputs
+Cross-Team: Platform Eng (tracing), App Teams (service maps)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="190" width="360" height="240" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Insights – Detailed">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="1400" value="Insights, Dashboards &amp; Access – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="1401" value="Views" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="880" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="1402" value="Infrastructure View
+• Cost by resource/tag/region
+• Anomaly detection" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1403" value="Application View
+• Service/app costs &amp; trends
+• SLO/latency overlays" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1404" value="Product &amp; Business View
+• Cost per transaction/API
+• Profitability signals" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1405" value="Self-Service Access
+• RBAC by BU/team
+• Export/BI connectors" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="330" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1406" value="Analytics" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="880" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="1407" value="What-If &amp; Forecasts
+• Rate cards &amp; scaling models
+• Scenario simulation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1408" value="Alerting &amp; Guidance
+• Budgets &amp; anomaly alerts
+• Allocation drift tips" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1409" value="Design for explainability: every metric should have a lineage view back to underlying facts." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="710" width="840" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="1410" value="Dependencies / Inputs
+
+• Ownership
+• Access/Permissions
+• Upstream Data
+• Process Dependencies
+• Cross-Team Touchpoints" style="swimlane;whiteSpace=wrap;html=1;fontSize=14;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="140" width="400" height="840" as="geometry"/>
+        </mxCell>
+        <mxCell id="1411" value="Ownership: FinOps + BI
+Inputs: Curated fact tables, Graph
+Cross-Team: Finance (reporting), Product (KPIs)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="190" width="360" height="240" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Governance – Detailed">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="1600" value="Governance, Policy &amp; Trust – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="1601" value="Controls" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="880" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="1602" value="Tag Compliance
+• Dashboards &amp; SLAs
+• Pre-deploy validation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1603" value="Drift Detection
+• Unmapped costs/resources
+• Alerting &amp; remediation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1604" value="Versioned Rules &amp; Audit
+• Change logs
+• Approvals &amp; peer review" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1605" value="RBAC &amp; Data Privacy
+• Role-based views
+• PII/PCI considerations" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="330" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1606" value="Operating Model" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="880" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="1607" value="RACI
+• FinOps, Platform, App Teams, Finance
+• Ownership by artifact" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1608" value="Compliance &amp; Audit Readiness
+• Evidence trails
+• Report reproducibility" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1609" value="Embed governance into pipelines to keep accuracy continuous, not periodic." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="710" width="840" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="1610" value="Dependencies / Controls
+
+• Ownership
+• Access/Permissions
+• Upstream Data
+• Process Dependencies
+• Cross-Team Touchpoints" style="swimlane;whiteSpace=wrap;html=1;fontSize=14;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="140" width="400" height="840" as="geometry"/>
+        </mxCell>
+        <mxCell id="1611" value="Ownership: FinOps Governance
+Inputs: Policy definitions
+Cross-Team: Security/Compliance, Finance" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="190" width="360" height="240" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Integration – Detailed">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="1800" value="Integration, APIs &amp; Extensibility – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="1801" value="Integration Surfaces" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="880" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="1802" value="APIs (REST/GraphQL)
+• Query facts &amp; dims
+• Lineage endpoints" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1803" value="Exports &amp; Connectors
+• Athena/ODBC/JDBC
+• Power BI/Looker/QuickSight" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1804" value="Plugins/Extensions
+• New allocators
+• New data sources" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1805" value="Multi-BU Partitioning
+• Data domain isolation
+• Shared rule libraries" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="330" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1806" value="Non-Functional" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="880" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="1807" value="Performance &amp; Cost
+• Partitioning &amp; caching
+• Query SLAs" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="420" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1808" value="Reliability
+• Backpressure &amp; retries
+• Idempotency &amp; checkpoints" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="570" width="400" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="1809" value="Document integration contracts and versioning; treat Prometheus as a platform capability." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="710" width="840" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="1810" value="Dependencies / Inputs
+
+• Ownership
+• Access/Permissions
+• Upstream Data
+• Process Dependencies
+• Cross-Team Touchpoints" style="swimlane;whiteSpace=wrap;html=1;fontSize=14;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="140" width="400" height="840" as="geometry"/>
+        </mxCell>
+        <mxCell id="1811" value="Ownership: FinOps Platform
+Inputs: Catalog of consumers
+Cross-Team: Data Platform, BI, App Teams" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="190" width="360" height="240" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Dependencies &amp; RACI">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2000" value="Dependencies &amp; RACI – Explicit" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="2001" value="Teams &amp; Responsibilities" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="880" height="820" as="geometry"/>
+        </mxCell>
+        <mxCell id="2002" value="FinOps Data Engineering
+• Own ingestion &amp; transforms
+• Ensure reconciliation &amp; lineage
+• Maintain schemas &amp; partitions" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="420" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="2003" value="Platform Engineering / SRE
+• Operate tracing/logging infra
+• Enforce tag policies in pipelines
+• Provide access/log storage" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="400" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="2004" value="Application Teams
+• Apply tags/labels
+• Provide service metadata
+• Review mappings &amp; allocations" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="370" width="420" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="2005" value="Finance / FP&amp;A
+• Define reporting needs
+• Validate attribution fairness
+• Consume exports for showback" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="370" width="400" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="2006" value="Security &amp; Compliance
+• Data access controls
+• PCI/PII considerations
+• Audit evidence" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="550" width="420" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="2007" value="Leadership / BU Owners
+• Prioritise goals &amp; KPIs
+• Approve policy changes
+• Drive adoption" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="550" width="400" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="2008" value="RACI Hint: FinOps (Accountable), Platform (Responsible), App Teams (Responsible for tagging), Finance (Consulted), Security (Consulted), BU Owners (Informed/Approver)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="730" width="840" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="2009" value="Hard Dependencies" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="880" height="400" as="geometry"/>
+        </mxCell>
+        <mxCell id="2010" value="Access: CUR S3, CloudWatch/X-Ray, EKS
+Tag Policy: Mandatory keys (product/app/service/env/owner)
+Data Platform: Glue/Athena/S3 buckets
+Identity: IAM roles &amp; least-privilege
+Change Control: Git-backed config repos" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="190" width="840" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="2011" value="Soft Dependencies" style="swimlane;whiteSpace=wrap;html=1;fontSize:16;rounded=1;fillColor:#ffffff;strokeColor:#b3b3b3;" vertex="1" parent="1">
+          <mxGeometry x="980" y="560" width="880" height="400" as="geometry"/>
+        </mxCell>
+        <mxCell id="2012" value="Ways of Working: SLAs for tag fixes &amp; mapping reviews
+Training: How to read dashboards &amp; lineage
+Communication: FinOps office hours &amp; release notes
+Incentives: BU cost targets tied to KPIs" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="610" width="840" height="300" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
