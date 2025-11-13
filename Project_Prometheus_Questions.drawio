@@ -1,0 +1,342 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net" version="20.8.3">
+  <diagram name="Data Ingestion">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Data Ingestion – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Collect AWS and Kubernetes cost and usage data reliably and automatically." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Dependencies" style="swimlane;fontSize=16;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="880" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="AWS CUR, EKS metrics, CloudWatch/X-Ray traces, data storage and query infrastructure." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="840" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Teams Involved" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="860" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Data Engineering (pipelines), FinOps (validation), SRE (monitoring/exporters), Development (tagging/metrics)." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="460" width="820" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Questions to Answer" style="swimlane;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="980" y="340" width="880" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Are we ingesting all AWS accounts and clusters? How quickly do we see spend? Is data complete and traceable?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="380" width="840" height="200" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Normalisation &amp; Enrichment">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Normalisation &amp; Enrichment – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Clean and align all cost data, standardise formats, and enrich with business context." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Dependencies" style="swimlane;fontSize=16;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="880" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Tag standards, metadata from Git or service catalogues, historical CUR data." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="840" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Teams Involved" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="860" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Data Engineering (standardisation), FinOps (enrichment rules), SRE (tag drift), Development (consistent metadata)." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="460" width="820" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Questions to Answer" style="swimlane;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="980" y="340" width="880" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Which fields must exist on all resources? How do we detect and fix missing tags? Who approves enrichment changes?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="380" width="840" height="200" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Service &amp; Application Mapping">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Service &amp; Application Mapping – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Define hierarchy from infrastructure to products, making relationships clear and consistent." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Dependencies" style="swimlane;fontSize=16;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="880" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Service inventory, access to tags and IaC repositories, clear definition of 'service' vs 'application'." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="840" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Teams Involved" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="860" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="FinOps (mapping logic), Data Engineering (rule engine), Development (identifiers), SRE (infra visibility)." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="460" width="820" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Questions to Answer" style="swimlane;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="980" y="340" width="880" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="How do we handle shared resources? What defines ownership? Should mappings update automatically?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="380" width="840" height="200" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Cost Attribution &amp; Allocation">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Cost Attribution &amp; Allocation – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Fairly distribute shared and indirect costs using transparent and defensible rules." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Dependencies" style="swimlane;fontSize=16;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="880" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Traffic and usage metrics, defined allocation logic, historical data for reconciliation." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="840" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Teams Involved" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="860" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="FinOps (policy), Data Engineering (logic), SRE (metrics), Development (cost driver insights)." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="460" width="820" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Questions to Answer" style="swimlane;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="980" y="340" width="880" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="What share of shared infra belongs to each service? How are short-lived services treated? Are all costs allocated?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="380" width="840" height="200" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Graph Model &amp; Relationships">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Graph Model &amp; Relationships – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Model service interdependencies and how costs flow between them to reveal hidden impact." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Dependencies" style="swimlane;fontSize=16;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="880" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Distributed tracing/mesh data, consistent service naming, historical trace data." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="840" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Teams Involved" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="860" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="FinOps (analysis), Data Engineering (graph model), SRE (observability), Development (instrumentation)." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="460" width="820" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Questions to Answer" style="swimlane;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="980" y="340" width="880" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Which services amplify costs most? Where are inefficient dependencies? How does dependency complexity affect cost?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="380" width="840" height="200" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Insights &amp; Decision Enablement">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Insights &amp; Decision Enablement – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Present data clearly for engineers, product managers, and finance through dashboards and analytics." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Dependencies" style="swimlane;fontSize=16;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="880" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Curated datasets, BI/analytics tools, access controls." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="840" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Teams Involved" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="860" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="FinOps (metrics/KPIs), Data Engineering (datasets), Development (usage), SRE (dashboard reliability)." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="460" width="820" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Questions to Answer" style="swimlane;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="980" y="340" width="880" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="What view matters most for each team? How often to update dashboards? How do we measure FinOps improvements?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="380" width="840" height="200" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Governance &amp; Policy">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Governance &amp; Policy – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Maintain trust and accuracy through compliance checks, versioned rules, and drift detection." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Dependencies" style="swimlane;fontSize=16;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="880" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Tagging policy, compliance reports, versioned configuration store." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="840" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Teams Involved" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="860" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="FinOps (governance), SRE (enforcement), Data Engineering (QA), Development (fix issues)." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="460" width="820" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Questions to Answer" style="swimlane;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="980" y="340" width="880" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Who approves rule changes? How is data quality measured? What alerts maintain compliance?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="380" width="840" height="200" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Integration &amp; Extensibility">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Integration &amp; Extensibility – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Enable Prometheus data to be used across other tools and systems safely and efficiently." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Dependencies" style="swimlane;fontSize=16;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="880" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="API gateway, data warehouse/BI tools, authentication system." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="840" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Teams Involved" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="860" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Data Engineering (APIs/connectors), FinOps (contracts), SRE (monitoring), Development (integrations)." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="460" width="820" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Questions to Answer" style="swimlane;fontSize=16;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="980" y="340" width="880" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="What’s the minimal useful API? How to version schemas safely? How to secure integrations?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="380" width="840" height="200" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Recap – Questions">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Project Prometheus – Key Questions Recap" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="Data Ingestion" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Are we ingesting all AWS accounts and clusters? How quickly do we see spend? Is data complete and traceable?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Normalisation &amp; Enrichment" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Which fields must exist on all resources? How do we detect and fix missing tags? Who approves enrichment changes?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Service &amp; Application Mapping" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="How do we handle shared resources? What defines ownership? Should mappings update automatically?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="820" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Cost Attribution &amp; Allocation" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="980" y="400" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="What share of shared infra belongs to each service? How are short-lived services treated? Are all costs allocated?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="440" width="820" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Graph Model &amp; Relationships" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="660" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Which services amplify costs most? Where are inefficient dependencies? How does dependency complexity affect cost?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="820" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="Insights &amp; Decision Enablement" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="980" y="660" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="What view matters most for each team? How often to update dashboards? How do we measure FinOps improvements?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="700" width="820" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="Governance &amp; Policy" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="920" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Who approves rule changes? How is data quality measured? What alerts maintain compliance?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="820" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Integration &amp; Extensibility" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="980" y="920" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="What’s the minimal useful API? How to version schemas safely? How to secure integrations?" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="960" width="820" height="160" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
