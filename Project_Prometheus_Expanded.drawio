@@ -1,0 +1,639 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net" version="20.8.3">
+  <diagram name="Data Ingestion">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Data Ingestion – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=18;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Ingest AWS CUR data automatically and hourly." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Capture EKS pod-level cost and usage metrics." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Integrate CloudWatch, X-Ray, and OpenTelemetry traces." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Maintain freshness and completeness of ingested data." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=18;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Access to AWS CUR in S3 and Athena." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="EKS cost allocation data." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Monitoring/exporter setup in all clusters." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Data lake or warehouse (e.g., Redshift)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="740" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="Teams Involved" style="swimlane;fontSize=18;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="820" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Engineering – build and maintain pipelines." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="FinOps – validate completeness and correctness." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="SRE – ensure data flow reliability." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Development – maintain tagging and metadata." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1080" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Questions to Answer" style="swimlane;fontSize=18;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1160" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Are all AWS accounts and clusters included?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1240" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="How quickly is new spend visible?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1300" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="Do we capture data lineage and ownership?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1360" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="What happens when ingestion fails?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1420" width="1760" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Normalisation &amp; Enrichment">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Normalisation &amp; Enrichment – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=18;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Standardise fields and units across all datasets." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Clean invalid or inconsistent tags and metadata." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Add business context like team, environment, and product." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Preserve historical continuity through schema changes." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=18;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Defined tagging and naming standards." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Access to metadata from Git or service catalogue." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Historical cost and usage data for comparison." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=18;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="Data Engineering – apply transformation logic." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="FinOps – define enrichment rules and verify outputs." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – detect and report tagging drift." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Development – implement consistent tagging." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=18;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1100" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="What are the required metadata fields per resource?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1180" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="How do we detect missing or incorrect tags?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1240" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Who validates enrichment when ownership isn’t clear?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1300" width="1760" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Service &amp; Application Mapping">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Service &amp; Application Mapping – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=18;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Map resources to services, apps, and products." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Represent shared resources transparently." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Support manual overrides where automation fails." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Version mappings to track change over time." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=18;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Service inventory with clear ownership." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Access to IaC repositories for structure mapping." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Agreed definitions for service, app, and product." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=18;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – define and review mapping logic." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Engineering – implement rule-based mapping." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="Development – maintain service identifiers." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="SRE – ensure visibility into shared infra." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=18;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1100" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="How do we assign shared costs fairly?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1180" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="When does ownership transfer between services?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1240" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Should mappings evolve automatically or via review?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1300" width="1760" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Cost Attribution &amp; Allocation">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Cost Attribution &amp; Allocation – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=18;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Allocate shared infrastructure cost proportionally." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Provide defensible and auditable attribution logic." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Support what-if analyses for different allocation policies." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Reconcile total attributed cost with raw spend." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=18;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Traffic and compute metrics from workloads." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Defined allocation policy and fallback logic." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Historical reconciliation data for validation." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=18;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – design attribution policy." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Engineering – implement allocation rules." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – expose infra-level metrics." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Development – validate application usage data." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=18;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1100" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Are 100% of costs allocated?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1180" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="How do we treat transient or experimental workloads?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1240" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="What’s the most fair metric for shared cost distribution?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1300" width="1760" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Graph Model &amp; Relationships">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Graph Model &amp; Relationships – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=18;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Build dependency graph of all services." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Model cost flow along service call paths." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Track impact propagation through the graph." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Visualise cost amplification between dependencies." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=18;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Access to distributed tracing (OTel/X-Ray)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Consistent service naming across traces." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Historical dependency data snapshots." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=18;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – use insights for cost optimisation." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Engineering – model and maintain graph data." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – monitor trace coverage and reliability." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Development – ensure trace instrumentation." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=18;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1100" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Which dependencies contribute most to cost?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1180" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="How do we quantify cost amplification?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1240" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Can we correlate service complexity with spend growth?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1300" width="1760" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Insights &amp; Decision Enablement">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Insights &amp; Decision Enablement – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=18;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Provide clear dashboards for each audience type." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Enable drill-down from product to infra cost levels." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Detect anomalies and trends automatically." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Allow forecasting and scenario modelling." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=18;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Curated and indexed datasets." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Access to BI tools (QuickSight, Looker, etc.)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Defined access controls for data visibility." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=18;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – define key cost metrics and KPIs." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Engineering – serve reliable datasets." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – ensure dashboard uptime." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Development – use insights to guide optimisation." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=18;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1100" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="What view is most actionable for each team?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1180" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="How often should dashboards refresh?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1240" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="How do we measure improvement post-action?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1300" width="1760" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Governance &amp; Policy">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Governance &amp; Policy – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=18;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Ensure tagging compliance across environments." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Version all mapping and attribution rules." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Provide automated drift and anomaly detection." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Maintain audit logs for cost model changes." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=18;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Tag compliance framework and tooling." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Version control for rule configuration." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Monitoring and alerting setup." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=18;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – define governance standards." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="SRE – enforce compliance policies." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="Data Engineering – validate data quality." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Development – fix compliance issues." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=18;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1100" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Who approves rule or policy changes?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1180" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="What metrics measure governance success?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1240" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="How do we surface data quality issues early?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1300" width="1760" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Integration &amp; Extensibility">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Integration &amp; Extensibility – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=18;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Expose APIs for other tools to consume cost data." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Provide exports to BI/reporting platforms." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Maintain versioned schemas and change tracking." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Enable secure third-party integration." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=18;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="API Gateway or internal data services." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Authentication and RBAC systems." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Data warehouse/BI tool access." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=18;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="760" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="Data Engineering – build connectors and APIs." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="840" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="FinOps – define external data contracts." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="900" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – ensure integration reliability." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Development – integrate with partner tools." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1020" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=18;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1100" width="1800" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="What’s the MVP for API surface area?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1180" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="How will we handle schema evolution?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1240" width="1760" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="What’s our security model for external consumers?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1300" width="1760" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Recap – Questions">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Project Prometheus – Key Questions Recap" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="Data Ingestion" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Are all AWS accounts and clusters included?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="How quickly is new spend visible?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="225" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Do we capture data lineage and ownership?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="270" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="What happens when ingestion fails?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="315" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Normalisation &amp; Enrichment" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="What are the required metadata fields per resource?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="How do we detect missing or incorrect tags?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="225" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Who validates enrichment when ownership isn’t clear?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="270" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Service &amp; Application Mapping" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="How do we assign shared costs fairly?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="When does ownership transfer between services?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="485" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="Should mappings evolve automatically or via review?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="530" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Cost Attribution &amp; Allocation" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="980" y="400" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Are 100% of costs allocated?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="440" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="How do we treat transient or experimental workloads?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="485" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="What’s the most fair metric for shared cost distribution?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="530" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Graph Model &amp; Relationships" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="660" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="Which dependencies contribute most to cost?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="How do we quantify cost amplification?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="745" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="23" value="Can we correlate service complexity with spend growth?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="790" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="Insights &amp; Decision Enablement" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="980" y="660" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="25" value="What view is most actionable for each team?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="700" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="26" value="How often should dashboards refresh?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="745" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="27" value="How do we measure improvement post-action?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="790" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="28" value="Governance &amp; Policy" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="920" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="29" value="Who approves rule or policy changes?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="30" value="What metrics measure governance success?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1005" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="31" value="How do we surface data quality issues early?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1050" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="32" value="Integration &amp; Extensibility" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="980" y="920" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="33" value="What’s the MVP for API surface area?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="960" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="34" value="How will we handle schema evolution?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1005" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="35" value="What’s our security model for external consumers?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1050" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
