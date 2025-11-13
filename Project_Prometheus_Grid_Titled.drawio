@@ -1,0 +1,665 @@
+<?xml version="1.0" ?>
+<mxfile host="app.diagrams.net" version="20.8.3">
+  <diagram name="Purpose">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Project Prometheus – Purpose" style="rounded=1;whiteSpace=wrap;html=1;fontSize=26;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="Project Prometheus aims to deliver full cost transparency across AWS and Kubernetes. By connecting infrastructure costs to applications, products, and business outcomes, it enables true unit economics for cloud spend. The prototype proves feasibility, but all functionality remains adaptable." style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="1800" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Reveal total cost of ownership per product, app, and service." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="100" y="340" width="1720" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Enable smarter architectural and financial decisions." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="100" y="400" width="1720" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Provide a living model of how spend drives value." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="100" y="460" width="1720" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Create shared understanding across FinOps, Engineering, and Product." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="100" y="520" width="1720" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Data Ingestion">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Data Ingestion – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Ingest AWS CUR hourly" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Capture EKS metrics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Integrate traces" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Maintain completeness" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="AWS CUR access" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="EKS metrics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Monitoring exporters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Data warehouse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="330" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="Teams Involved" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Eng – pipelines" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="FinOps – validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="SRE – reliability" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Dev – tagging" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="670" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Questions to Answer" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="All accounts included?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Latency to visibility?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="Data lineage clear?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="Failure handling?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="670" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Normalisation &amp; Enrichment">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Normalisation &amp; Enrichment – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Standardise datasets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Clean invalid tags" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Add business context" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Keep history" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Tag standards" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Git metadata" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Historical data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="Data Eng – transform" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="FinOps – define rules" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – monitor drift" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Dev – tagging consistency" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="670" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Required metadata?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Detect missing tags?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Who validates enrichment?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Service &amp; Application Mapping">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Service &amp; Application Mapping – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Map resources→services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Handle shared infra" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Manual overrides" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Versioned mapping" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Service inventory" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="IaC repos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Definitions for hierarchy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – logic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Eng – mapping engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="Dev – identifiers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="SRE – infra visibility" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="670" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Shared cost handling?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Ownership transfer?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Auto vs manual updates?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Cost Attribution &amp; Allocation">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Cost Attribution &amp; Allocation – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Allocate shared cost" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Provide audit trail" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Support what-if analysis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Reconcile totals" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Usage metrics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Allocation rules" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Reconciliation data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – policy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Eng – rules" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – metrics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Dev – usage data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="670" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="All costs allocated?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Short-lived services?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Fair metric for sharing?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Graph Model &amp; Relationships">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Graph Model &amp; Relationships – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Build dependency graph" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Model cost flow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Track impact" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Visualise cost links" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Tracing data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Service naming" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Historical graphs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – insights" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Eng – graph model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – tracing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Dev – instrumentation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="670" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Top cost dependencies?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Cost amplification?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Complexity correlation?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Insights &amp; Decision Enablement">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Insights &amp; Decision Enablement – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Dashboards per audience" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Drill-down visibility" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Detect anomalies" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Forecast trends" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Curated data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="BI tools" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Access controls" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – KPIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Data Eng – datasets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – uptime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Dev – usage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="670" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Most useful view?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Refresh frequency?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Measure improvement?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Governance &amp; Policy">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Governance &amp; Policy – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Ensure tagging compliance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Version rules" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Detect drift" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Maintain audit logs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Compliance tools" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Version control" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Alerting" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="FinOps – standards" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="SRE – enforcement" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="Data Eng – QA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Dev – fixes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="670" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Who approves rules?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Governance metrics?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Detect quality issues?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Integration &amp; Extensibility">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Integration &amp; Extensibility – Detailed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="What it needs to do / achieve" style="swimlane;fontSize=16;fillColor:#d5e8d4;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Expose APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Enable exports" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Version schemas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Secure integration" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="330" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Dependencies" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Auth systems" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="230" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="BI access" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="280" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Teams Involved" style="swimlane;fontSize=16;fillColor:#f8cecc;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="Data Eng – APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="FinOps – contracts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="SRE – reliability" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Dev – integrations" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="670" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="Questions to Answer" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="480" width="860" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="MVP API scope?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="520" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Schema evolution?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="570" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Security model?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="620" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Recap – Questions">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Project Prometheus – Key Questions Recap" style="rounded=1;whiteSpace=wrap;html=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="1800" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="Data Ingestion" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="All accounts included?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Latency to visibility?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="225" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Data lineage clear?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="270" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Failure handling?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="315" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Normalisation &amp; Enrichment" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="140" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Required metadata?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="180" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Detect missing tags?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="225" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" value="Who validates enrichment?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="270" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" value="Service &amp; Application Mapping" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" value="Shared cost handling?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" value="Ownership transfer?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="485" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="Auto vs manual updates?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="530" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" value="Cost Attribution &amp; Allocation" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="400" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="17" value="All costs allocated?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="440" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="18" value="Short-lived services?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="485" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="19" value="Fair metric for sharing?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="530" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="Graph Model &amp; Relationships" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="660" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="Top cost dependencies?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="22" value="Cost amplification?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="745" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="23" value="Complexity correlation?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="790" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="Insights &amp; Decision Enablement" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="660" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="25" value="Most useful view?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="700" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="26" value="Refresh frequency?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="745" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="27" value="Measure improvement?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="790" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="28" value="Governance &amp; Policy" style="swimlane;fontSize=16;fillColor:#e1d5e7;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="920" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="29" value="Who approves rules?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="960" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="30" value="Governance metrics?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1005" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="31" value="Detect quality issues?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1050" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="32" value="Integration &amp; Extensibility" style="swimlane;fontSize=16;fillColor:#fff2cc;strokeColor=#666666;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="920" width="860" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="33" value="MVP API scope?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="960" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="34" value="Schema evolution?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1005" width="820" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="35" value="Security model?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="1050" width="820" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
